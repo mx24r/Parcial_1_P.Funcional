@@ -1,6 +1,7 @@
   object Prueba_parcial_1 {
     def main(args: Array[String]): Unit = {
 
+<<<<<<< Updated upstream
       // Ejercicio 1
       def myMethod(datos : List[Double]): Double = {
         val promedio = (datos : List[Double]) => datos.sum / datos.size
@@ -13,6 +14,17 @@
         Math.sqrt(sumaCuadrados / datos.size)
       }
       println(myMethod(List(1.0,2.0,3.0)))
+=======
+      // Ejercicio 1 corregido
+      def myMethod(datos: List[Double]): Double = {
+        val promedio = datos.sum / datos.size
+        def diferencia(k: Double): Double = k - promedio
+        def cuadrado(x: Double): Double = x * x
+        val sumaCuadrados: Double = datos.map(d => cuadrado(diferencia(d))).sum
+        Math.sqrt(sumaCuadrados / datos.size)
+      }
+      println(myMethod(List(1.0, 2.0, 3.0)))
+>>>>>>> Stashed changes
 
       // Ejercicio 2
       def transformarCalificaciones(calificaciones: List[Double], politica: String): List[Double] = {
@@ -45,19 +57,23 @@
       }
       println(transformarCalificaciones(List(9.5, 10, 6.3, 8, 6), "redondear"))
 
+<<<<<<< Updated upstream
 
 
 
 
     // Ejercicio 3
+=======
+      // Ejercicio 3 corregido
+>>>>>>> Stashed changes
       def generadorSaludoAnonimo: String => String => String = {
-        def f1(fraseBase: String) : String => String = {
-          def f2(nombre: String): String = s"$fraseBase, $nombre!"
-              f2
+        def f1(fraseBase: String): String => String = {
+          def f2(nombre: String): String =
+            s"$fraseBase, $nombre!"
+          f2 // retorno correcto y bien indentado
         }
-        f1
+        f1 // retorno correcto y bien indentado
       }
       println(generadorSaludoAnonimo("Hola")("Mateo"))
     }
-  }
 
