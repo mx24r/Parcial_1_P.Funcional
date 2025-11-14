@@ -2,17 +2,15 @@
     def main(args: Array[String]): Unit = {
 
       // Ejercicio 1
-      def myMethod(datos : List[Double]): Double = {
-        val promedio = (datos : List[Double]) => datos.sum / datos.size
-        def diferencia(k : Double) : Double = k - promedio(datos)
-        val sumaCuadrados: Double = datos.map {
-          def diferencia(k : Double) : Double = k - promedio(datos)
-          def sumaCuadrados(diferencia: Double) : Double = diferencia * diferencia
-          sumaCuadrados
-        }.sum
+      def myMethod(datos: List[Double]): Double = {
+        val promedio = datos.sum / datos.size
+
+        val sumaCuadrados = datos.map(d => (d - promedio) * (d - promedio)).sum
+
         Math.sqrt(sumaCuadrados / datos.size)
       }
-      println(myMethod(List(1.0,2.0,3.0)))
+      println(myMethod(List(1.0, 2.0, 3.0)))
+
 
       // Ejercicio 2
       def transformarCalificaciones(calificaciones: List[Double], politica: String): List[Double] = {
@@ -39,15 +37,10 @@
 
           // Política Desconocida: Si la política no es reconocida, se devuelve la lista original
           case _ =>
-            println(s"Política desconocida: $politica")
             calificaciones
         }
       }
       println(transformarCalificaciones(List(9.5, 10, 6.3, 8, 6), "redondear"))
-
-
-
-
 
     // Ejercicio 3
       def generadorSaludoAnonimo: String => String => String = {
