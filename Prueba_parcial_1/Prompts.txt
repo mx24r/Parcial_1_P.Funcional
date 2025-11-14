@@ -1,17 +1,11 @@
 / Ejercicio 1
       // Ejercicio 1
 def myMethod(datos: List[Double]): Double = {
-  val promedio = datos.sum / datos.size
-
-  def diferencia(k: Double): Double = k - promedio
-  def cuadrado(x: Double): Double = x * x
-
-  val sumaCuadrados: Double = datos.map(d => cuadrado(diferencia(d))).sum
-
-  Math.sqrt(sumaCuadrados / datos.size)
-}
-
-println(myMethod(List(1.0, 2.0, 3.0)))
+        val promedio = datos.sum / datos.size
+        val sumaCuadrados = datos.map(d => (d - promedio) * (d - promedio)).sum
+        Math.sqrt(sumaCuadrados / datos.size)
+      }
+      println(myMethod(List(1.0, 2.0, 3.0)))
 
 analiza el siguiente codigo aplicando la programacion funcional en scala (funciones de orden superior, valores inmutables), explicame paso a paso que esta mal y corrige en todo caso, corrige sin desviarte de mi ejercicio, no implementando funciones extra que no están definidas (es decir, no salirse del .map, .match, .floor, etc..)
 
