@@ -1,20 +1,6 @@
   object Prueba_parcial_1 {
     def main(args: Array[String]): Unit = {
 
-<<<<<<< Updated upstream
-      // Ejercicio 1
-      def myMethod(datos : List[Double]): Double = {
-        val promedio = (datos : List[Double]) => datos.sum / datos.size
-        def diferencia(k : Double) : Double = k - promedio(datos)
-        val sumaCuadrados: Double = datos.map {
-          def diferencia(k : Double) : Double = k - promedio(datos)
-          def sumaCuadrados(diferencia: Double) : Double = diferencia * diferencia
-          sumaCuadrados
-        }.sum
-        Math.sqrt(sumaCuadrados / datos.size)
-      }
-      println(myMethod(List(1.0,2.0,3.0)))
-=======
       // Ejercicio 1 corregido
       def myMethod(datos: List[Double]): Double = {
         val promedio = datos.sum / datos.size
@@ -24,7 +10,6 @@
         Math.sqrt(sumaCuadrados / datos.size)
       }
       println(myMethod(List(1.0, 2.0, 3.0)))
->>>>>>> Stashed changes
 
       // Ejercicio 2
       def transformarCalificaciones(calificaciones: List[Double], politica: String): List[Double] = {
@@ -51,21 +36,14 @@
 
           // Política Desconocida: Si la política no es reconocida, se devuelve la lista original
           case _ =>
-            println(s"Política desconocida: $politica")
             calificaciones
         }
       }
       println(transformarCalificaciones(List(9.5, 10, 6.3, 8, 6), "redondear"))
 
-<<<<<<< Updated upstream
 
 
-
-
-    // Ejercicio 3
-=======
       // Ejercicio 3 corregido
->>>>>>> Stashed changes
       def generadorSaludoAnonimo: String => String => String = {
         def f1(fraseBase: String): String => String = {
           def f2(nombre: String): String =
