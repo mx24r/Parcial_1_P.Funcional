@@ -4,9 +4,7 @@
       // Ejercicio 1
       def myMethod(datos: List[Double]): Double = {
         val promedio = datos.sum / datos.size
-
         val sumaCuadrados = datos.map(d => (d - promedio) * (d - promedio)).sum
-
         Math.sqrt(sumaCuadrados / datos.size)
       }
       println(myMethod(List(1.0, 2.0, 3.0)))
